@@ -18,6 +18,13 @@ img {
   padding: 0;
 }
 
+body {
+  background: #424242 url(asset/images/body_bg.png);
+  font-size: 16px;
+  color: #fff;
+  height: 100%;
+}
+
 .top_nav-wrapper {
   height: 62px;
   background: rgb(245, 245, 245);
@@ -36,6 +43,13 @@ img {
 .top_nav-container {
   width: 100%;
   max-width: 913px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .top_nav-container {
+    max-width: 100%;
+  }
 }
 .top_nav-list {
   width: 100%;
@@ -61,8 +75,7 @@ img {
 .brand_logo {
   padding: 5px 5px 8px 10px;
   height: 62px;
-  box-shadow: 0 0 7px 1px #666666;
-  margin: 0 10px;
+  box-shadow: 5px 0 8px 1px rgba(0, 0, 0, 0.3);
   border-right: 0;
   border-left: 0;
   background: #fff;
@@ -71,6 +84,7 @@ img {
 @media only screen and (max-width: 960px) {
   .brand_logo {
     height: 58px;
+    margin: 0;
   }
 }
 .top_nav-items {
@@ -80,6 +94,15 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 960px) {
+  .top_nav-items img {
+    width: 66px;
+  }
+}
+.top_nav-items img {
+  height: auto;
 }
 
 .top_nav-buttons {
