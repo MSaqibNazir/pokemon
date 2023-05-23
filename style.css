@@ -73,6 +73,12 @@ body {
   }
 }
 
+@keyframes jump-up {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .brand_logo {
   padding: 5px 5px 8px 10px;
   height: 62px;
@@ -159,6 +165,12 @@ body {
   align-items: center;
 }
 
+.main_nav {
+  position: sticky;
+  top: -46px;
+  z-index: 9999;
+}
+
 @media only screen and (max-width: 960px) {
   .main_nav {
     display: none;
@@ -199,7 +211,7 @@ body {
 }
 
 #home::after {
-  background-color: #919191;
+  background-color: #585858;
   border-radius: 0 0 0 8px;
 }
 #pokedex::after {
@@ -241,6 +253,11 @@ body {
   font-size: 1.4rem;
   text-align: center;
   line-height: 1.4rem;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 #home {
@@ -300,7 +317,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #383838;
+  background-color: #313131;
   cursor: pointer;
   border-right: 2px solid #000;
 }
@@ -324,7 +341,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #383838;
+  background-color: #313131;
   cursor: pointer;
   border-left: 2px solid #000;
 }
@@ -343,4 +360,142 @@ body {
 }
 .login-text {
   margin-top: 0.5rem;
+}
+
+/* Container */
+.container {
+  box-sizing: border-box;
+  background: #fff url("asset/images/container_bg.png");
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  max-width: 1280px;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.section {
+  padding: 1em 0;
+  background: transparent url("asset/images/content_bg.png") left top;
+  background-size: 100% 1px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 1024px;
+  width: 100%;
+}
+
+.section:first-child {
+  padding-top: 25px;
+}
+
+.push-1 {
+  margin-left: 7.2525%;
+}
+
+.column-8 {
+  float: left;
+  margin-right: -100%;
+  width: 56.47%;
+}
+.content-block {
+  float: left;
+  margin: 1em 0 0 0;
+  position: relative;
+}
+.content-hero-wrapper {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.content-block img {
+  border-radius: 5px 5px 0 0;
+  float: left;
+  width: 100%;
+}
+
+.banner,
+.banner-quicklink,
+.base-banner {
+  border-radius: 5px;
+  float: left;
+  padding-bottom: 0.5em;
+  width: 100%;
+}
+
+.banner-red {
+  transition: background-color 0.1s linear;
+  background-color: #e3350d;
+}
+.content-hero .banner-red {
+  padding-bottom: 1.5em;
+  padding-top: 0.25em;
+}
+
+.color-block h3,
+.color-block-quicklink h3,
+.banner h3,
+.banner-quicklink h3,
+.base-banner h3 {
+  font-size: 137.5%;
+  line-height: 125%;
+  text-transform: none;
+  font-family: "Flexo-Medium", arial, sans-serif;
+}
+
+.color-block h1,
+.color-block-quicklink h1,
+.banner h1,
+.banner-quicklink h1,
+.base-banner h1,
+.color-block h2,
+.color-block-quicklink h2,
+.banner h2,
+.banner-quicklink h2,
+.base-banner h2,
+.color-block h3,
+.color-block-quicklink h3,
+.banner h3,
+.banner-quicklink h3,
+.base-banner h3 {
+  font-family: "Flexo-Medium", arial, sans-serif;
+  margin: 0.75em 0.5em 0 1em;
+}
+
+.banner-red h1,
+.banner-red h2,
+.banner-red h3 {
+  color: #fff;
+}
+
+.color-block p:last-child,
+.color-block-quicklink p:last-child,
+.banner p:last-child,
+.banner-quicklink p:last-child,
+.base-banner p:last-child,
+.color-block a:last-child,
+.color-block-quicklink a:last-child,
+.banner a:last-child,
+.banner-quicklink a:last-child,
+.base-banner a:last-child {
+  margin-bottom: 0.75em;
+}
+
+.color-block p,
+.color-block-quicklink p,
+.banner p,
+.banner-quicklink p,
+.base-banner p {
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 100%;
+  font-weight: 500;
+  line-height: 125%;
+  margin-left: 1.25em;
+}
+
+/* Animation content-hero-wrapper */
+.content-hero-wrapper:hover {
+  animation: jump-up 0.15s;
 }
