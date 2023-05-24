@@ -363,19 +363,21 @@ body {
 }
 
 /* Container */
-.container {
+.body_container {
   box-sizing: border-box;
   background: #fff url("asset/images/container_bg.png");
-  clear: both;
   display: block;
   margin: 0 auto;
   max-width: 1280px;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+}
+.body_container:first-child {
+  padding-top: 2.5rem;
 }
 
-.section {
+.mosaic {
+  position: relative;
   padding: 1em 0;
   background: transparent url("asset/images/content_bg.png") left top;
   background-size: 100% 1px;
@@ -386,28 +388,42 @@ body {
   width: 100%;
 }
 
-.section:first-child {
-  padding-top: 25px;
-}
-
-.push-1 {
+.col-1 {
   margin-left: 7.2525%;
-}
-
-.column-8 {
   float: left;
   margin-right: -100%;
   width: 56.47%;
+  display: flex;
+  flex-wrap: wrap;
 }
+.col-2 {
+  margin-left: 65.2925%;
+  float: left;
+  margin-right: -100%;
+  width: 27.46%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
 .content-block {
+  border-radius: 5px;
   float: left;
-  margin: 1em 0 0 0;
+  margin: 1.6rem 0 0 0;
   position: relative;
 }
-.content-hero-wrapper {
-  float: left;
-  position: relative;
+
+.content-block-full {
+  display: block;
   width: 100%;
+}
+
+.content-block-half {
+  width: 48.4375%;
+}
+
+.content-block-half-first {
+  margin-right: 3.125%;
 }
 
 .content-block img {
@@ -416,86 +432,79 @@ body {
   width: 100%;
 }
 
-.banner,
-.banner-quicklink,
-.base-banner {
-  border-radius: 5px;
+.banner {
   float: left;
-  padding-bottom: 0.5em;
   width: 100%;
+  border-radius: 0 0 5px 5px;
 }
 
 .banner-red {
-  transition: background-color 0.1s linear;
-  background-color: #e3350d;
-}
-.content-hero .banner-red {
   padding-bottom: 1.5em;
   padding-top: 0.25em;
+  background: #e3350d;
+}
+.banner-gray {
+  background-color: #a4a4a4;
+}
+.banner-black {
+  background-color: #313131;
+}
+.banner-blue {
+  background-color: #1b53ba;
+}
+.banner-lightbrown {
+  background-color: #c7aa79;
+}
+.banner-purple {
+  background-color: #855ac9;
 }
 
-.color-block h3,
-.color-block-quicklink h3,
-.banner h3,
-.banner-quicklink h3,
-.base-banner h3 {
+.banner-right {
+  border-radius: 5px;
+  padding-bottom: 0;
+}
+
+.banner-right img {
+  border-radius: 5px 0 0 5px;
+  width: 40%;
+  margin-bottom: 0;
+  max-width: 132px;
+}
+.banner-right .banner-wrapper {
+  width: 60%;
+  position: relative;
+  float: left;
+}
+
+.banner h3 {
   font-size: 137.5%;
   line-height: 125%;
+  font-weight: 400;
   text-transform: none;
-  font-family: "Flexo-Medium", arial, sans-serif;
-}
-
-.color-block h1,
-.color-block-quicklink h1,
-.banner h1,
-.banner-quicklink h1,
-.base-banner h1,
-.color-block h2,
-.color-block-quicklink h2,
-.banner h2,
-.banner-quicklink h2,
-.base-banner h2,
-.color-block h3,
-.color-block-quicklink h3,
-.banner h3,
-.banner-quicklink h3,
-.base-banner h3 {
   font-family: "Flexo-Medium", arial, sans-serif;
   margin: 0.75em 0.5em 0 1em;
 }
-
-.banner-red h1,
-.banner-red h2,
-.banner-red h3 {
-  color: #fff;
-}
-
-.color-block p:last-child,
-.color-block-quicklink p:last-child,
-.banner p:last-child,
-.banner-quicklink p:last-child,
-.base-banner p:last-child,
-.color-block a:last-child,
-.color-block-quicklink a:last-child,
-.banner a:last-child,
-.banner-quicklink a:last-child,
-.base-banner a:last-child {
-  margin-bottom: 0.75em;
-}
-
-.color-block p,
-.color-block-quicklink p,
-.banner p,
-.banner-quicklink p,
-.base-banner p {
+.banner p {
+  margin: 0.5em 0.5em 0 1em;
   font-family: "Roboto", arial, sans-serif;
   font-size: 100%;
   font-weight: 500;
   line-height: 125%;
   margin-left: 1.25em;
 }
+.banner p:last-child {
+  margin-bottom: 0.75em;
+  color: #ccc;
+}
 
-/* Animation content-hero-wrapper */
-.content-hero-wrapper:hover {
+.banner h3:first-child:last-child {
+  margin-bottom: 0.75em;
+}
+
+.banner-gray h3 {
+  color: #000;
+}
+/* Animation content-block */
+.content-block:hover {
   animation: jump-up 0.15s;
 }
