@@ -24,6 +24,9 @@ body {
   color: #fff;
   height: 100%;
 }
+a {
+  text-decoration: none;
+}
 
 .top_nav-wrapper {
   height: 62px;
@@ -333,6 +336,12 @@ body {
   fill: #fff;
 }
 
+.icon-search {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+}
+
 .login-container {
   height: 100%;
   float: right;
@@ -362,6 +371,166 @@ body {
   margin-top: 0.5rem;
 }
 
+/* User Dashboard */
+#user_dashboard {
+  position: fixed;
+  left: 0;
+  top: 161px;
+  width: 59px;
+  max-width: 1280px;
+  height: 100%;
+  z-index: 17;
+  overflow: hidden;
+}
+
+@media (min-width: 1297px) and (max-width: 9999px) {
+  #user_dashboard {
+    left: 50%;
+    margin-left: -640px;
+  }
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate(-100%, 0%);
+}
+
+.profile-nav {
+  left: 100%;
+  position: absolute;
+  padding-top: 1em;
+  width: 59px;
+}
+
+@media only screen and (max-width: 960px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.profile-nav ul {
+  min-height: 64.25px;
+  background-image: url("asset/images/profile-nav-repeat-bg.png");
+  background-repeat: repeat-y;
+  float: left;
+  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.profile-nav ul::before {
+  background: transparent url("asset/images/profile-nav-bg.png") left -34px;
+  content: " ";
+  display: block;
+  height: 17px;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: -17px;
+  width: 100%;
+}
+
+li:after {
+  background: transparent url("asset/images/profile-nav-bg.png") left -51px;
+  content: " ";
+  display: block;
+  height: 17px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: -17px;
+  width: 100%;
+}
+
+.sign-up {
+  font-family: "Flexo-Bold", arial, sans-serif;
+  background-color: #54b564;
+  font-size: 87.5%;
+  line-height: 90%;
+}
+
+.profile-nav li {
+  font-family: "Flexo-Bold", arial, sans-serif;
+  background-color: #54b564;
+  font-size: 87.5%;
+  line-height: 90%;
+  display: block;
+  cursor: pointer;
+  float: left;
+  margin: 0;
+  position: relative;
+  width: 57px;
+  text-align: center;
+}
+.profile-nav a {
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 75%;
+  font-weight: 500;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+}
+
+.sign-up span {
+  padding-bottom: 1.3em;
+  display: block;
+  margin: 25% 0;
+}
+
+.avatar-icon-wrapper {
+  border-radius: 17px 17px 17px 17px;
+  background: #4dad5b;
+  width: 30px;
+  height: 30px;
+  margin: 2px auto;
+}
+
+.sign-up img {
+  margin-bottom: 0.25em;
+}
+.avatar-icon {
+  width: 35px;
+  height: 35px;
+  margin: -3px 0 0 -3px;
+}
+
+.sign-in-text-wrapper {
+  padding: 0.5px 0 0;
+}
+
+.search {
+  transition: background-image 0.2s;
+  background-image: url("asset/images/profile-nav-search-bg.png");
+  float: left;
+  height: 67px;
+  margin-top: 0;
+  width: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search a {
+  color: #fff;
+  font-size: 175%;
+  height: 67px;
+  line-height: 67px;
+}
+
+.icon_search:before {
+  content: "asset/images/container_bg.png";
+}
+
 /* Container */
 .body_container {
   box-sizing: border-box;
@@ -371,9 +540,6 @@ body {
   max-width: 1280px;
   overflow: hidden;
   position: relative;
-}
-.body_container:first-child {
-  padding-top: 2.5rem;
 }
 
 .mosaic {
@@ -386,6 +552,7 @@ body {
   overflow: hidden;
   max-width: 1024px;
   width: 100%;
+  animation: fadein 2s normal;
 }
 
 .col-1 {
@@ -396,6 +563,15 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
+@media only screen and (max-width: 960px) {
+  .col-1 {
+    width: 85%;
+    float: none;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
 .col-2 {
   margin-left: 65.2925%;
   float: left;
@@ -404,6 +580,15 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 960px) {
+  .col-2 {
+    width: 85%;
+    float: none;
+    margin: 0 auto;
+    justify-content: center;
+  }
 }
 
 .content-block {
@@ -424,6 +609,14 @@ body {
 
 .content-block-half-first {
   margin-right: 3.125%;
+}
+
+@media only screen and (max-width: 960px) {
+  .content-block-half {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
 }
 
 .content-block img {
@@ -476,6 +669,33 @@ body {
   float: left;
 }
 
+@media only screen and (max-width: 960px) {
+  /* .banner-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    float: none;
+  }
+
+  .banner-right .banner-wrapper {
+    text-align: center;
+    width: 100%;
+  }
+
+  .banner-right img {
+    width: 100%;
+    max-width: 100%;
+  } */
+  .banner-right {
+    display: none;
+  }
+
+  .banner h3,
+  .banner p {
+    text-align: center;
+  }
+}
+
 .banner h3 {
   font-size: 137.5%;
   line-height: 125%;
@@ -504,7 +724,70 @@ body {
 .banner-gray h3 {
   color: #000;
 }
+
 /* Animation content-block */
 .content-block:hover {
   animation: jump-up 0.15s;
+}
+
+.loader {
+  display: block;
+  background: url("asset/images/icons/pokedex.svg") center center no-repeat;
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 49%;
+  top: 20%;
+  animation: loader 0.5s infinite, fadeout 2s forwards;
+}
+
+.loader.bottom {
+  top: auto;
+  bottom: 1%;
+}
+
+.loader.top {
+  bottom: auto;
+  top: 1%;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* animation: fadeOpacity 2s normal; */
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

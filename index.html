@@ -132,10 +132,39 @@
       </div>
     </nav>
 
+    <!-- User Dashboard -->
+    <div id="user_dashboard">
+      <div class="drawer">
+        <nav class="profile-nav hidden-mobile">
+          <ul>
+            <li class="sign-up">
+              <a href="#">
+                <span>
+                  <div class="avatar-icon-wrapper">
+                    <img
+                      class="avatar-icon"
+                      src="asset/images/icons/user.png"
+                      alt="Log In" />
+                  </div>
+                  <div class="sign-in-text-wrapper">Log In</div>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="search">
+            <svg class="icon-search">
+              <use xlink:href="asset/images/icons/sprite.svg#search"></use>
+            </svg>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Body Container -->
     <div class="body_container">
       <section class="mosaic">
         <div class="col-1">
-          <div class="content-block content-block-full">
+          <div class="content-block content-block-full content-hero">
             <div class="title-image-wrapper">
               <img src="asset/images/title/pokemon-go-169.png" alt="" />
             </div>
@@ -194,6 +223,7 @@
           </div>
         </div>
       </section>
+      <div class="loader"></div>
     </div>
   </body>
 </html>
