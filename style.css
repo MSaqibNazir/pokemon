@@ -776,6 +776,9 @@ a {
   }
 }
 
+.slider-bg > * {
+  user-select: none;
+}
 .slider-section {
   padding: 3.2rem 0;
   height: auto;
@@ -825,32 +828,35 @@ a {
 }
 
 /* Slider-Wrapper */
-.slider-wrapper {
+
+.slider-bg {
+  width: 100%;
+  height: 383px;
   border-top: 3px solid #1e1e1e;
-  float: left;
+  background: #1e1e1e;
+}
+.slider-wrapper {
+  margin: 0 auto;
   min-height: 430px;
   position: relative;
-  width: 100%;
-  overflow-x: hidden;
+  width: 360px;
+  /* overflow: hidden; */
   scroll-snap-type: x mandatory;
 }
 
 ul.slider {
-  background: #313131;
-  display: flex;
   height: 100%;
-  left: 0;
   list-style-type: none;
+  display: flex;
   margin: 0;
-  min-height: 336px;
+  height: 380px;
   padding: 0;
-  position: absolute;
+  position: relative;
   text-align: center;
-  top: 0;
-  white-space: nowrap;
-  width: max-content;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
   cursor: grab;
+  position: absolute;
+  left: -460px;
 }
 
 ul.slider:active {
@@ -858,20 +864,64 @@ ul.slider:active {
 }
 
 li.pokemon-list-item {
-  display: inline-block;
-  font-size: 0;
-  white-space: nowrap;
-  margin: 0 2px;
-  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1px;
   height: 380px;
   background: #616161;
 }
 
+.pokemon-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+
+  align-content: center;
+}
+
 img.pokemon-character {
-  width: 150px;
+  position: relative;
+  width: 250px;
+  height: 250px;
   user-select: none;
+  z-index: 2;
+  opacity: 0.4;
+}
+
+img.pokemon-character:hover {
+  scale: 1.25;
+  opacity: 1;
+  transform: translateY(-15px);
+  transition: all 0.3s ease-out;
 }
 
 .mini-profile {
+  background: #313131;
   width: 100%;
+  height: 130px;
+}
+
+.mini-profile h5 {
+  color: #fff;
+  font-size: 150%;
+  text-transform: none;
+  margin: 3.6rem 0 0 2.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.mini-profile dl {
+  display: none;
+}
+
+.pokedex-bg {
+  position: absolute;
+  top: 10px;
+  font-size: 95px;
+  color: #525252;
+  z-index: 0;
+  opacity: 1;
+  font-weight: 1000;
 }
