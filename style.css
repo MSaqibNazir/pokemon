@@ -829,6 +829,11 @@ a {
 
 /* Slider-Wrapper */
 
+.slider input {
+  visibility: hidden;
+  position: absolute;
+}
+
 .slider-bg {
   width: 100%;
   height: 383px;
@@ -840,7 +845,6 @@ a {
   min-height: 430px;
   position: relative;
   width: 360px;
-  /* overflow: hidden; */
   scroll-snap-type: x mandatory;
 }
 
@@ -853,7 +857,7 @@ ul.slider {
   padding: 0;
   position: relative;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
   cursor: grab;
   position: absolute;
   left: -460px;
@@ -871,13 +875,17 @@ li.pokemon-list-item {
   background: #616161;
 }
 
+.slide {
+  flex-shrink: 0;
+  transition: 0.5s margin-left;
+}
+
 .pokemon-image-container {
   position: relative;
   width: 100%;
   height: 250px;
   display: flex;
   justify-content: center;
-
   align-content: center;
 }
 
@@ -924,4 +932,63 @@ img.pokemon-character:hover {
   z-index: 0;
   opacity: 1;
   font-weight: 1000;
+}
+
+/* Label customization */
+.lblContainer {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  padding: 0 5%;
+  bottom: -100px;
+}
+
+.lbl {
+  height: 15px;
+  width: 100%;
+  margin: 0 2rem;
+  border: 3px solid #949494;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s background-color;
+}
+
+.lbl:hover {
+  background-color: #c1c1c1;
+}
+
+#radio-3:checked ~ .slide-1 {
+  margin-left: 0;
+}
+
+#radio-4:checked ~ .slide-1 {
+  margin-left: -10%;
+}
+
+#radio-5:checked ~ .slide-1 {
+  margin-left: -20%;
+}
+
+#radio-6:checked ~ .slide-1 {
+  margin-left: -30%;
+}
+
+#radio-3:checked ~ .slide-1 > .mini-profile {
+  height: 185.5px;
+}
+#radio-4:checked ~ .slide-2 > .mini-profile {
+  height: 185.5px;
+}
+#radio-5:checked ~ .slide-3 > .mini-profile {
+  height: 185.5px;
+}
+#radio-6:checked ~ .slide-4 > .mini-profile {
+  height: 185.5px;
+}
+
+/* New Mosaic */
+.new-mosaic {
+  margin-top: 10rem;
 }
